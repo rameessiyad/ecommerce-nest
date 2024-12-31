@@ -1,4 +1,12 @@
-import { Controller } from '@nestjs/common';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Body, Controller, Post } from '@nestjs/common';
 
 @Controller('product')
-export class ProductController {}
+export class ProductController {
+  @Post()
+  createProduct(
+    @Body('name') name: string,
+    @Body('price') price: string,
+    @Body('description') description?: string,
+  ) {}
+}
